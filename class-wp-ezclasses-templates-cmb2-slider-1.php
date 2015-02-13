@@ -35,8 +35,6 @@ if (!defined('ABSPATH')) {
 
 if ( ! class_exists('Class_WP_ezClasses_Templates_CMB2_Slider_1') ) {
   class Class_WP_ezClasses_Templates_CMB2_Slider_1 extends Class_WP_ezClasses_Admin_CMB2_Setup_1{
-  
-    protected $_image_desc = 'TODO - Image dimensions';
     
 	public function __construct() {
 	  parent::__construct();
@@ -119,17 +117,27 @@ if ( ! class_exists('Class_WP_ezClasses_Templates_CMB2_Slider_1') ) {
 	
 	  $mb_fields = array(
 	  
-	    'f100' => array(
+	    'ezs1_f100' => array(
+		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
+		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
+		    'label' => 'Sort Order',
+		//	'desc' => 'TODO field description (optional)',
+			'name'   => 'date_sort',
+			'type' => 'text_date_timestamp',
+			),
+		  ),
+	  
+	    'ezs1_f200' => array(
 		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
 		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
 		    'label' => 'Slide Image',
-			'desc' => $this->_image_desc, // 'File type: jpg. Dimensions should be square and no smaller than 450 x 450.',
+		//	'desc' => 'TODO', // 'File type: jpg. Dimensions should be square and no smaller than 450 x 450.',
 			'name'   => 'slide_image',
 			'type' => 'file',
 			),
 		  ),
 	  
-	    'f200' => array(
+	    'ezs1_f300' => array(
 		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
 		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
 		    'label' => 'Slide Title',
@@ -139,17 +147,17 @@ if ( ! class_exists('Class_WP_ezClasses_Templates_CMB2_Slider_1') ) {
 			),
 		  ),
 		  
-	    'f300' => array(
+	    'ezs1_f400' => array(
 		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
 		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
-		    'label' => 'Sales Pitch',
+		    'label' => '"The Pitch"',
 		//	'desc' => 'TODO field description (optional)',
 			'name'   => 'slide_pitch',
 			'type' => 'textarea_small',
 			),
 		  ),
 		  
-	    'f400' => array(
+	    'ezs1_f500' => array(
 		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
 		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
 		    'label' => 'Call to Action',
@@ -159,7 +167,7 @@ if ( ! class_exists('Class_WP_ezClasses_Templates_CMB2_Slider_1') ) {
 			),
 		  ),
 		  
-	    'f500' => array(
+	    'ezs1_f600' => array(
 		  'active' => true, 	// NEW - not found in (nor actually used by) CMB2
 		  'cmb2'	=> array(	// NEW (KINDA) - the cmb2 stuff gets its own spot. 
 		    'label' => 'Call to Action URL',
@@ -182,7 +190,7 @@ if ( ! class_exists('Class_WP_ezClasses_Templates_CMB2_Slider_1') ) {
 	}
 	
 	/**
-	 * TODO - add a proper WP filter?
+	 * Add, for example, your desc's here
 	 */
 	public function ez_slider_1_fields_ezfilter($arr_args = array()){
 	
