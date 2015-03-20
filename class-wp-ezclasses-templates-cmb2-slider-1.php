@@ -1,8 +1,8 @@
 <?php
-/** 
- * ez-Tizes the setup arg for WebDevStudio's plugin CMB2 (custom metaboxes and fields).
+/**
+ * Predefined CMB2 meta box / fields for a basic slider.
  *
- * Allows for the adding of validation args to the CMB2 setup array, as well as some other necessary (if not #BadAss) ez magic. 
+ * Leans on (i.e., inherits) Class_WP_ezClasses_Admin_CMB2_Setup_1 which handles the brunt of the magic.
  *
  * PHP version 5.3
  *
@@ -13,11 +13,11 @@
  * @since 0.5.1
  * @license TODO
  */
- 
+
 /**
  * == Change Log == 
  *
- * == 0.5.0 - Mon 1 Dec 2014 ==
+ * == 0.5.0 - Thur 12 Feb 2015 ==
  * --- Pop the champagne!
  */
  
